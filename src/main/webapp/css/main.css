@@ -1,0 +1,65 @@
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+    padding-top: 60px;
+}
+
+body > .footer {
+    margin-top: 30px;
+    padding: 30px;
+    background-color: #fafafa;
+}
+
+label {
+    cursor: pointer;
+}
+
+/* Desktop large
+------------------------- */
+@media (min-width: 1200px) {
+}
+
+/* Desktop
+------------------------- */
+@media (max-width: 1199px) and (min-width: 981px) {
+    .hero-unit h1 {
+        font-size: 2em;
+    }
+}
+
+/* Tablet to desktop
+------------------------- */
+@media (min-width: 768px) and (max-width: 980px) {
+    body {
+        padding-top:0;
+    }
+    .hero-unit h1 {
+        font-size: 2em;
+    }
+}
+
+/* Tablet
+------------------------- */
+@media (max-width: 767px) {
+    body {
+        padding-top:0;
+    }
+    body > .footer {
+        text-align: center;
+    }
+    p.right {
+        text-align: center;
+    }
+    .hero-unit h1 {
+        font-size: 2em;
+    }
+}
+
+/* Landscape phones
+------------------------- */
+@media (max-width: 480px) {
+}
+

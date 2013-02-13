@@ -35,7 +35,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -50,8 +49,7 @@ import org.springframework.web.context.WebApplicationContext;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(loader = AnnotationConfigContextLoader.class,
-        classes = {ComponentConfig.class, DataConfig.class, WebConfig.class})
+@ContextConfiguration(classes = {ComponentConfig.class, DataConfig.class, WebConfig.class})
 @ActiveProfiles("tests")
 @Transactional
 public class TestControllerTest {
@@ -72,7 +70,7 @@ public class TestControllerTest {
         try {
             this.mockMvc.perform(MockMvcRequestBuilders.get("/test"))
                     .andExpect(MockMvcResultMatchers.status().isOk())
-                    .andExpect(MockMvcResultMatchers.forwardedUrl("/WEB-INF/views/test.jsp"));
+                    .andExpect(MockMvcResultMatchers.forwardedUrl("/WEB-INF/views/index.jsp"));
         } catch (Exception e) {
             log.error("Trouble", e);
         }
